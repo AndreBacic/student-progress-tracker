@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# this secret key should not be in a public repo
+kendo-ui-license.txt
