@@ -11,6 +11,7 @@ import { Grid, GridColumn, GridSortChangeEvent } from '@progress/kendo-react-gri
 import { IReport } from './IReport';
 import { orderBy, SortDescriptor } from '@progress/kendo-data-query';
 import SuccessMessage from './SuccessMessage';
+import ValidatableInput from './ValidatableInput';
 
 // TODO: Change favicon to something other than the default React logo
 function App() {
@@ -18,7 +19,7 @@ function App() {
   const [reports, setReports] = useState<IReport[]>([]);
   const [sort, setSort] = useState<Array<SortDescriptor>>([]);
   const [successMessage, setSuccessMessage] = useState<string>("Added successfully!");
-  const [successMessageShow, setSuccessMessageShow] = useState<boolean>(true);
+  const [successMessageShow, setSuccessMessageShow] = useState<boolean>(false);
 
   useEffect(() => {
     const storedReports = localStorage.getItem('reports');
@@ -42,11 +43,17 @@ function App() {
 
     dataItem.studentName = '';
     dataItem.course = '';
-    dataItem.grade = '';
+    dataItem.grade = 0;
 
     setSuccessMessage(`${newReport.studentName} was added successfully!`);
     setSuccessMessageShow(true);
   }
+
+
+  const studentNameValidator = (value: string) => value?.length > 0 ? "" : "Student name is required";
+  const courseValidator = (value: string) => value?.length > 0 ? "" : "Course name is required";
+  const gradeValidator = (value: number) => (value >= 0 && value <= 100) ? "" : "Grade must be between 0 and 100";
+
 
   return (
     <div className="app-container" >
@@ -57,13 +64,14 @@ function App() {
               <legend className={"k-form-legend"}>
                 Add a new student report:
               </legend>
-              <Field name={"studentName"} component={Input} label={"Student name"} />
-              <Field name={"course"} component={Input} label={"Course name"} />
+              <Field name={"studentName"} component={ValidatableInput} label={"Student name"} validator={studentNameValidator} />
+              <Field name={"course"} component={ValidatableInput} label={"Course name"} validator={courseValidator} />
               <Field
                 name={"grade"}
                 type={"number"}
-                component={Input}
-                label={"Grade percentage (0-100)"}
+                component={ValidatableInput}
+                label={"Grade percentage"}
+                validator={gradeValidator}
               />
             </fieldset>
             <div className="k-form-buttons" style={{ marginTop: "1rem" }}>
