@@ -1,6 +1,17 @@
 .app-container {
   margin: 0 auto;
   max-width: 46rem;
-  padding: 1rem;
+  padding: 2rem 0.5rem 1rem;
   text-align: center;
+}
+
+.app-container .k-grid-header col,
+.app-container .k-grid-table col {
+  min-width: 6.5rem;
+}
+
+.app-container .k-grid-header col:last-of-type,
+.app-container .k-grid-table col:last-of-type {
+  width: 20%;
+  min-width: 4.5rem;
 }

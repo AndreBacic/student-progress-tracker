@@ -1,10 +1,9 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
 test('renders add report form', () => {
   render(<App />);
-  const formSubmit = screen.getByRole('button', { name: 'Add' });
+  const formSubmit = screen.getByRole('button');
   expect(formSubmit).toBeInTheDocument();
 });
 
