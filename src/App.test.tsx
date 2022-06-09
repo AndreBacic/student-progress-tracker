@@ -2,8 +2,15 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders add report form', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const formSubmit = screen.getByRole('button', { name: 'Add' });
+  expect(formSubmit).toBeInTheDocument();
+});
+
+// check if grid table is rendered
+test('renders grid table', () => {
+  render(<App />);
+  const gridTable = screen.getByRole('grid');
+  expect(gridTable).toBeInTheDocument();
 });
