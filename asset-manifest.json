@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/student-progress-tracker/static/css/main.7d1c7d01.css",
-    "main.js": "/student-progress-tracker/static/js/main.339f269c.js",
+    "main.css": "/student-progress-tracker/static/css/main.56993158.css",
+    "main.js": "/student-progress-tracker/static/js/main.57264c31.js",
     "static/js/787.73968c35.chunk.js": "/student-progress-tracker/static/js/787.73968c35.chunk.js",
+    "static/media/bootstrap-icons.woff?": "/student-progress-tracker/static/media/bootstrap-icons.7ff3ca6fa798de3f8ac2.woff",
+    "static/media/bootstrap-icons.woff2?": "/student-progress-tracker/static/media/bootstrap-icons.f2539a501be3a673de05.woff2",
     "index.html": "/student-progress-tracker/index.html",
-    "main.7d1c7d01.css.map": "/student-progress-tracker/static/css/main.7d1c7d01.css.map",
-    "main.339f269c.js.map": "/student-progress-tracker/static/js/main.339f269c.js.map",
+    "main.56993158.css.map": "/student-progress-tracker/static/css/main.56993158.css.map",
+    "main.57264c31.js.map": "/student-progress-tracker/static/js/main.57264c31.js.map",
     "787.73968c35.chunk.js.map": "/student-progress-tracker/static/js/787.73968c35.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7d1c7d01.css",
-    "static/js/main.339f269c.js"
+    "static/css/main.56993158.css",
+    "static/js/main.57264c31.js"
   ]
 }
