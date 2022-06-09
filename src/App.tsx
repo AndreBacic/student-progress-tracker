@@ -1,12 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import '@progress/kendo-theme-bootstrap/dist/all.css';
-import { process } from '@progress/kendo-data-query';
 import {
   Form,
   Field,
   FormElement,
-  FieldRenderProps,
   FormRenderProps,
 } from "@progress/kendo-react-form";
 import { Input } from "@progress/kendo-react-inputs";
@@ -29,15 +27,20 @@ function App() {
       course: dataItem.course,
       grade: dataItem.grade
     };
-    setReports([...reports, newReport]);
-    localStorage.setItem('reports', JSON.stringify(reports));
+    const newReports = [...reports, newReport];
+    setReports(newReports);
+    localStorage.setItem('reports', JSON.stringify(newReports));
+
+    dataItem.studentName = '';
+    dataItem.course = '';
+    dataItem.grade = '';
   }
 
   return (
     <div className="app-container" >
       <Form onSubmit={addReport}
         render={(formRenderProps: FormRenderProps) => (
-          <FormElement className={"border-bottom border-dark border-3"}>
+          <FormElement>
             <fieldset className={"k-form-fieldset"}>
               <legend className={"k-form-legend"}>
                 Add a new student report:
