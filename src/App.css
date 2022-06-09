@@ -13,5 +13,5 @@
 .app-container .k-grid-header col:last-of-type,
 .app-container .k-grid-table col:last-of-type {
   width: 20%;
-  min-width: 4.5rem;
+  min-width: 5rem;
 }

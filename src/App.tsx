@@ -6,14 +6,13 @@ import {
   FormElement,
   FormRenderProps,
 } from "@progress/kendo-react-form";
-import { Input } from "@progress/kendo-react-inputs";
 import { Grid, GridColumn, GridSortChangeEvent } from '@progress/kendo-react-grid';
 import { IReport } from './IReport';
 import { orderBy, SortDescriptor } from '@progress/kendo-data-query';
 import SuccessMessage from './SuccessMessage';
 import ValidatableInput from './ValidatableInput';
 
-// TODO: Change favicon to something other than the default React logo
+
 function App() {
 
   const [reports, setReports] = useState<IReport[]>([]);

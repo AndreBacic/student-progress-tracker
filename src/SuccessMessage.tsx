@@ -17,5 +17,4 @@ function SuccessMessage(props: {
     );
 }
 
-
 export default SuccessMessage;
