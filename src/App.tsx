@@ -32,8 +32,8 @@ function App() {
 
   function addReport(dataItem: { [name: string]: any }) {
     const newReport: IReport = {
-      studentName: dataItem.studentName,
-      course: dataItem.course,
+      studentName: dataItem.studentName.trim(),
+      course: dataItem.course.trim(),
       grade: Number(dataItem.grade)
     };
     const newReports = [...reports, newReport];
@@ -49,8 +49,8 @@ function App() {
   }
 
 
-  const studentNameValidator = (value: string) => value?.length > 0 ? "" : "Student name is required";
-  const courseValidator = (value: string) => value?.length > 0 ? "" : "Course name is required";
+  const studentNameValidator = (value: string) => value?.trim().length > 0 ? "" : "Student name is required";
+  const courseValidator = (value: string) => value?.trim().length > 0 ? "" : "Course name is required";
   const gradeValidator = (value: number) => (value >= 0 && value <= 100) ? "" : "Grade must be between 0 and 100";
 
 
