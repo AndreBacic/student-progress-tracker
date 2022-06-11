@@ -22,7 +22,12 @@ function App() {
 
   useEffect(() => {
     const storedReports = localStorage.getItem('reports');
-    setReports(storedReports ? JSON.parse(storedReports) : []);
+    const jsonReports: IReport[] = storedReports ? JSON.parse(storedReports) : [];
+    // cleans reports from before June 9th 2022 when the grades were stored as strings
+    jsonReports.forEach(report => {
+      report.grade = Number(report.grade);
+    });
+    setReports(jsonReports);
   }, []);
 
   const sortChange = (event: GridSortChangeEvent) => {
